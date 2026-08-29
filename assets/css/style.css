@@ -1,0 +1,255 @@
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* ===== Header ===== */
+#site-header {
+  background: rgba(247, 245, 252, 0);
+}
+#site-header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px -6px rgba(75, 46, 147, 0.12);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #4B2E93;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #4B2E93;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-link {
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid #EDE7F9;
+  color: #2A2438;
+}
+.mobile-link:last-of-type {
+  border-bottom: none;
+}
+
+/* ===== Eyebrow / divider ===== */
+.eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5B34B8;
+}
+
+.divider {
+  width: 56px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4B2E93 0%, #4B2E93 50%, #3A9A69 50%, #3A9A69 100%);
+}
+
+/* ===== Hero background ===== */
+.hero-bg {
+  background: radial-gradient(ellipse 80% 60% at 20% 0%, #EDE7F9 0%, #F7F5FC 55%, #F7F5FC 100%);
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -160px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,114,214,0.22) 0%, rgba(139,114,214,0) 70%);
+  z-index: 0;
+}
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  left: -140px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(76,175,125,0.16) 0%, rgba(76,175,125,0) 70%);
+  z-index: 0;
+}
+
+/* ===== Step cards ===== */
+.step-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px -6px rgba(75, 46, 147, 0.12);
+  text-align: center;
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon-sm {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Carousel ===== */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #4B2E93;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px -6px rgba(75, 46, 147, 0.25);
+  transition: transform 0.2s ease;
+}
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+#carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #D8CDF2;
+  transition: all 0.25s ease;
+}
+#carousel-dots button.active {
+  width: 24px;
+  background: #4B2E93;
+}
+
+/* ===== Specialty cards ===== */
+.specialty-card {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 20px -6px rgba(75, 46, 147, 0.12);
+  border-left: 4px solid transparent;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.specialty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px -12px rgba(75, 46, 147, 0.22);
+}
+.specialty-card.border-purple { border-left-color: #4B2E93; }
+.specialty-card.border-green { border-left-color: #3A9A69; }
+
+.card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ===== FAQ ===== */
+.faq-item {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px -6px rgba(75, 46, 147, 0.1);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 1.15rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2A2438;
+}
+.faq-chevron {
+  flex-shrink: 0;
+  margin-left: 1rem;
+  color: #5B34B8;
+  transition: transform 0.25s ease;
+}
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+  color: #6B6580;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.faq-item.open .faq-answer {
+  max-height: 220px;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F3FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CDF2;
+  border-radius: 999px;
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Focus visibility ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4B2E93;
+  outline-offset: 2px;
+}
