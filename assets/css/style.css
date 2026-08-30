@@ -95,7 +95,7 @@ section[id] {
 
 /* ===== Hero background ===== */
 .hero-bg {
-  background: linear-gradient(180deg, #3D2260 0%, #6D3FA9 32%, #A37AD9 68%, #F8F5FC 100%);
+  background: linear-gradient(180deg, #3D2260 0%, #6D3FA9 32%, #A37AD9 68%, #F3F0EA 100%);
 }
 .hero-bg::before {
   content: "";
@@ -108,7 +108,7 @@ section[id] {
   background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 70%);
   z-index: 0;
 }
-.hero-bg::after {
+/* .hero-bg::after {
   content: "";
   position: absolute;
   bottom: -180px;
@@ -118,7 +118,7 @@ section[id] {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(46,125,91,0.14) 0%, rgba(46,125,91,0) 70%);
   z-index: 0;
-}
+} */
 
 /* ===== Step cards ===== */
 .step-card {
