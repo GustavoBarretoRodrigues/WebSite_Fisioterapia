@@ -13,7 +13,7 @@ section[id] {
 
 /* ===== Header ===== */
 #site-header {
-  background: rgba(243, 240, 234, 0);
+  background: transparent;
 }
 #site-header.scrolled {
   background: rgba(255, 255, 255, 0.92);
@@ -21,11 +21,32 @@ section[id] {
   box-shadow: 0 4px 20px -6px rgba(109, 63, 169, 0.12);
 }
 
+/* Header sits over the dark hero gradient by default: white text/logo */
+#site-header .nav-link,
+#site-header .menu-toggle-btn {
+  color: rgba(255, 255, 255, 0.92);
+}
+#site-header .site-logo {
+  filter: brightness(0) invert(1);
+}
+
+/* Once scrolled, header is a solid light bar: switch back to dark text/logo */
+#site-header.scrolled .nav-link,
+#site-header.scrolled .menu-toggle-btn {
+  color: rgba(42, 36, 56, 0.8);
+}
+#site-header.scrolled .site-logo {
+  filter: none;
+}
+
 .nav-link {
   position: relative;
   transition: color 0.2s ease;
 }
-.nav-link:hover {
+#site-header .nav-link:hover {
+  color: #ffffff;
+}
+#site-header.scrolled .nav-link:hover {
   color: #6D3FA9;
 }
 .nav-link::after {
@@ -35,7 +56,7 @@ section[id] {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: #6D3FA9;
+  background: currentColor;
   transition: width 0.25s ease;
 }
 .nav-link:hover::after {
@@ -61,6 +82,9 @@ section[id] {
   text-transform: uppercase;
   color: #8354C4;
 }
+.eyebrow-on-dark {
+  color: rgba(255, 255, 255, 0.92);
+}
 
 .divider {
   width: 56px;
@@ -71,17 +95,17 @@ section[id] {
 
 /* ===== Hero background ===== */
 .hero-bg {
-  background: radial-gradient(ellipse 80% 60% at 20% 0%, #EDE1F7 0%, #F3F0EA 55%, #F3F0EA 100%);
+  background: linear-gradient(180deg, #3D2260 0%, #6D3FA9 32%, #A37AD9 68%, #F8F5FC 100%);
 }
 .hero-bg::before {
   content: "";
   position: absolute;
-  top: -120px;
+  top: -140px;
   right: -160px;
-  width: 480px;
-  height: 480px;
+  width: 520px;
+  height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(163,122,217,0.24) 0%, rgba(163,122,217,0) 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 70%);
   z-index: 0;
 }
 .hero-bg::after {
@@ -92,7 +116,7 @@ section[id] {
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(46,125,91,0.16) 0%, rgba(46,125,91,0) 70%);
+  background: radial-gradient(circle, rgba(46,125,91,0.14) 0%, rgba(46,125,91,0) 70%);
   z-index: 0;
 }
 
